@@ -9,15 +9,16 @@
 </head>
 
 <body>
-	<h1>Player Scoreboard</h1>
+	<div class="containerNew">
+	<h1>High score</h1>
 	<div class="scoreboard-container" id="scoreboard">
 		<!-- Player information will be dynamically added here -->
 	</div>
 	<div class="slider-container">
-		<input type="range" min="10" max="30" value="16" class="slider" id="fontSlider" orient="vertical">
+		<input type="range" min="20" max="50" value="16" class="slider" id="fontSlider" orient="vertical">
 	</div>
 	<button onclick="window.location.href = 'index.html';">Main menu</button>
-
+	</div>
 	<script>
 		 fetch('http://127.0.0.1:8000/score')
         .then(response => response.json())

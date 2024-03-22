@@ -22,7 +22,17 @@ h1 {
     border: 1px solid #ccc; /* Add border for visual clarity */
     border-radius: 5px; /* Add border radius */
 }
-
+.containerNew {
+	background-color: white;
+	border: 2px solid;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 580px;
+	width: 75%;
+	transform: translate(-50%, -50%);
+	padding: 150px;
+}
 .player-info:nth-child(1) {
     animation: first-place 1s infinite alternate; /* Animation for first player */
 }
@@ -54,30 +64,48 @@ button {
     position: fixed; /* Set position to fixed */
     top: 10px; /* Set distance from the top */
     left: 10px; /* Set distance from the left */
-	border-radius: 5px;
-	border: 0;
-	padding: 20px;
+    border-radius: 5px;
+    border: 0;
+    padding: 20px;
     color: #fff;
     background-color: #6799af;
+    transition: background-color 0.3s; /* Add transition for smooth effect */
+}
+
+/* Add hover effect */
+button:hover {
+    background-color: #567890; /* Darker color */
 }
 
 
 button:hover {
     background-color: #0056b3; /* Change button background color on hover */
 }
-  .slider-container {
+.slider-container {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 60px;
+    right: 500px;
+    padding: 20px;
+    z-index: 1000;
+    background-color: #fff;
+}
+
+.slider-container {
+    position: fixed;
+    bottom: 60px;
+    right: 500px;
     padding: 20px;
     z-index: 1000;
     background-color: #fff;
 }
 
 .slider {
+    position: fixed;
+	bottom: 10px;
+    right: 50px;
     -webkit-appearance: none;
     appearance: none;
-    width: 100px; /* Adjust width as needed */
+    width: 250px; /* Adjust width as needed */
     height: 10px; /* Adjust height as needed */
     background: #d3d3d3;
     outline: none;
@@ -120,7 +148,11 @@ button:hover {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-
+body {
+    font-size: 25px;
+	background-color:#6799af;
+}
+}
 /* Add styles for first, second, and third places */
 .first-place {
     background-color: gold;

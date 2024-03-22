@@ -211,7 +211,7 @@ async function getQuestion() {
 		
 			let choiceBtn =
 				document.createElement(
-					"button"
+					"button" 
 				);
 			choiceBtn.setAttribute(
 				"value",
@@ -222,6 +222,8 @@ async function getQuestion() {
 			choiceBtn.style.fontSize = currentFontSize;
 			choiceBtn.onclick =
 				questionClick;
+			choiceBtn.classList.add("button"+ (parseInt(i) + 1));
+			console.log(i)
 			choicesEl.appendChild(
 				choiceBtn
 			);
