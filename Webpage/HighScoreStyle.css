@@ -1,0 +1,142 @@
+body {
+    background-color: #f0f0f0; /* Set background color */
+}
+
+h1 {
+    color: #333; /* Set heading color */
+}
+
+.scoreboard-container {
+    max-height: 400px; /* Set the maximum height of the container */
+    overflow-y: auto; /* Enable vertical scrollbar if needed */
+    border: 1px solid #ccc; /* Add border for visual clarity */
+    padding: 10px; /* Add padding for spacing */
+    background-color: #e6f7ff; /* Set background color */
+    border-radius: 5px; /* Add border radius */
+}
+
+.player-info {
+    margin-bottom: 10px; /* Add margin between player information */
+    padding: 10px; /* Add padding for spacing */
+    background-color: #fff; /* Set background color */
+    border: 1px solid #ccc; /* Add border for visual clarity */
+    border-radius: 5px; /* Add border radius */
+}
+
+.player-info:nth-child(1) {
+    animation: first-place 1s infinite alternate; /* Animation for first player */
+}
+
+.player-info:nth-child(2) {
+    animation: second-place 1s infinite alternate; /* Animation for second player */
+}
+
+.player-info:nth-child(3) {
+    animation: third-place 1s infinite alternate; /* Animation for third player */
+}
+
+@keyframes first-place {
+    0% { background-color: #ffc107; }
+    100% { background-color: #fff; }
+}
+
+@keyframes second-place {
+    0% { background-color: #17a2b8; }
+    100% { background-color: #fff; }
+}
+
+@keyframes third-place {
+    0% { background-color: #28a745; }
+    100% { background-color: #fff; }
+}
+
+button {
+    margin-top: 10px; /* Add margin to the button */
+    background-color: #007bff; /* Set button background color */
+    color: #fff; /* Set button text color */
+    padding: 10px 20px; /* Add padding to the button */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Add border radius to the button */
+    cursor: pointer; /* Set cursor to pointer on hover */
+}
+
+button:hover {
+    background-color: #0056b3; /* Change button background color on hover */
+}
+  .slider-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 20px;
+    z-index: 1000;
+    background-color: #fff;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100px; /* Adjust width as needed */
+    height: 10px; /* Adjust height as needed */
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px; /* Adjust thumb width as needed */
+    height: 20px; /* Adjust thumb height as needed */
+    background: #0d548b;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 20px; /* Adjust thumb width as needed */
+    height: 20px; /* Adjust thumb height as needed */
+    background: #4CAF50;
+    cursor: pointer;
+}
+/* HighScoreStyle.css */
+
+/* Set the width to 80% */
+.scoreboard-container {
+    width: 80%;
+    margin: auto; /* Center the container horizontally */
+    max-height: 80vh; /* Set maximum height to 80% of the viewport height */
+    overflow-y: auto; /* Add vertical scrollbar if content exceeds maximum height */
+    margin-bottom: 50px;
+}
+
+/* Add styles for player information */
+.player-info {
+    width: 70%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the player records horizontally */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Add styles for first, second, and third places */
+.first-place {
+    background-color: gold;
+}
+
+.second-place {
+    background-color: silver;
+}
+
+.third-place {
+    background-color: #cd7f32; /* Bronze color */
+}
+
+h1 {
+    text-align: center; /* Center align the text */
+    font-family: Arial, sans-serif; /* Specify font family */
+    font-size: 32px; /* Adjust font size */
+    font-weight: bold; /* Make the text bold */
+    color: #333; /* Set text color */
+    margin-top: 20px; /* Add top margin for spacing */
+}

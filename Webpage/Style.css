@@ -15,7 +15,6 @@
 }
 
 .containerNew {
-	//border: 2px solid;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -33,11 +32,7 @@ p {
 	text-align: center;
 }
 
-.scoresHeader {
-	position: absolute;
-	bottom: 15px;
-	left: 0px;
-}
+
 
 .timer {
 	position: absolute;
@@ -46,7 +41,9 @@ p {
 }
 
 button {
-	display: inline-block;
+	display: block;
+    width: 100%;
+    box-sizing: border-box;
 	margin: 10px;
 	cursor: pointer;
 	color: #fff;
@@ -57,7 +54,16 @@ button {
 	
 }
 
+.scores-header {
+	border-radius: 5px;
+	border: 0;
+	padding: 20px;
+    color: #fff;
+    background-color: #6799af;
+}
+
 button:hover {
+	color: #fff;
 	background-color: #6799af;
 }
 
@@ -92,10 +98,47 @@ li {
 	padding: 5px;
 	list-style: decimal inside none;
 }
+.slider-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 20px;
+    z-index: 1000;
+    background-color: #fff;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100px; /* Adjust width as needed */
+    height: 10px; /* Adjust height as needed */
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px; /* Adjust thumb width as needed */
+    height: 20px; /* Adjust thumb height as needed */
+    background: #0d548b;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 20px; /* Adjust thumb width as needed */
+    height: 20px; /* Adjust thumb height as needed */
+    background: #4CAF50;
+    cursor: pointer;
+}
 
 li:nth-child(odd) {
 	background-color: #dfdae7;
 }
+
 @media screen and (max-width: 1920px) {
 	.containerNew {
 		width: 80%;

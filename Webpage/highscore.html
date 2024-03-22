@@ -1,29 +1,83 @@
-<!--highscore.html-->
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport"
-		content="width=device-width,
-				initial-scale=1.0" />
-	<link rel="stylesheet"
-		href="./style.css" />
-	<script src="./highScore.js"></script>
-	<title>Code Quiz - High Scores</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./HighScoreStyle.css" />
+	<title>Player Scoreboard</title>
 </head>
 
 <body>
-	<div class="scores">
-		<h1>Highscores</h1>
-		<ol id="highscores"></ol>
-		<a href="index.html">
-			<button>
-				Re-Start
-			</button>
-		</a>
+	<h1>Player Scoreboard</h1>
+	<div class="scoreboard-container" id="scoreboard">
+		<!-- Player information will be dynamically added here -->
 	</div>
+	<div class="slider-container">
+		<input type="range" min="10" max="30" value="16" class="slider" id="fontSlider" orient="vertical">
+	</div>
+	<button onclick="window.location.href = 'index.html';">Main menu</button>
+
+	<script>
+		 fetch('http://127.0.0.1:8000/score')
+        .then(response => response.json())
+        .then(data => {
+            // Sort players by score in descending order
+            data.sort((a, b) => b.score - a.score);
+
+            // Process each player object in the JSON array
+            data.slice(0, 20).forEach((player, index) => { // Slice to display only the top 20 players
+                // Create a div element to display player name, score, and rank
+                const playerDiv = document.createElement('div');
+                playerDiv.classList.add('player-info'); // Add class for styling
+
+                // Determine rank based on index
+                let rank;
+                if (index === 0) {
+                    rank = '1st';
+                } else if (index === 1) {
+                    rank = '2nd';
+                } else if (index === 2) {
+                    rank = '3rd';
+                } else {
+                    rank = `${index + 1}.`;
+                }
+
+                // Set the innerHTML of the div with player name, score, and rank
+                playerDiv.innerHTML = `<p>${rank} Place: ${player.player_name}</p>
+                                       <p>Score: ${player.score}</p>`;
+
+                // Append the playerDiv to the scoreboard div
+                document.getElementById('scoreboard').appendChild(playerDiv);
+
+                // Add animation classes for first, second, and third players
+                if (index === 0) {
+                    playerDiv.classList.add('first-place');
+                } else if (index === 1) {
+                    playerDiv.classList.add('second-place');
+                } else if (index === 2) {
+                    playerDiv.classList.add('third-place');
+                }
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+		function updateFontSize() {
+			newSize = fontSlider.value + "px";
+			const textElements = document.querySelectorAll("*");
+			textElements.forEach(element => {
+				if (element.nodeType === Node.TEXT_NODE) {
+					element.parentNode.style.fontSize = newSize;
+				} else {
+					element.style.fontSize = newSize;
+				}
+			});
+		}
+
+		// Add event listener to slider input event
+		fontSlider.addEventListener("input", updateFontSize);
+	</script>
 </body>
 
 </html>
