@@ -113,7 +113,7 @@ let buttonOfchoices = document.querySelector("value");
 
 // Quiz's initial state
 let currentQuestionIndex = 0;
-let time = 15;
+let time = 12;
 let timerId;
 
 // Start quiz and hide frontpage

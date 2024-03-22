@@ -9,6 +9,16 @@
 	margin: 50px auto 0 auto;
 	max-width: 400px;
 }
+h1 {
+	right: 20px;
+    background-image: url('logo.png');
+    background-size: contain;
+    width: 500px;
+    height: 350px;
+    text-indent: -9999px;
+    margin: auto; /* Add this line */
+    /* Add this line */
+}
 
 #top {
 	color: red;
@@ -26,8 +36,12 @@
 
 p {
 	margin: 15px 15px;
+	text-align: center;
 }
 
+body {
+    font-size: 25px;
+}
 .landing {
 	text-align: center;
 }
@@ -55,6 +69,16 @@ button {
 }
 
 .scores-header {
+	position: fixed; /* Set position to fixed */
+    top: 0px; /* Set distance from the top */
+    left: 0px; /* Set distance from the left */
+	border-radius: 5px;
+	border: 0;
+	padding: 20px;
+    color: #fff;
+    background-color: #6799af;
+}
+.scores-try {
 	border-radius: 5px;
 	border: 0;
 	padding: 20px;

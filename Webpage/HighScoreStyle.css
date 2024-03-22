@@ -51,14 +51,16 @@ h1 {
 }
 
 button {
-    margin-top: 10px; /* Add margin to the button */
-    background-color: #007bff; /* Set button background color */
-    color: #fff; /* Set button text color */
-    padding: 10px 20px; /* Add padding to the button */
-    border: none; /* Remove button border */
-    border-radius: 5px; /* Add border radius to the button */
-    cursor: pointer; /* Set cursor to pointer on hover */
+    position: fixed; /* Set position to fixed */
+    top: 10px; /* Set distance from the top */
+    left: 10px; /* Set distance from the left */
+	border-radius: 5px;
+	border: 0;
+	padding: 20px;
+    color: #fff;
+    background-color: #6799af;
 }
+
 
 button:hover {
     background-color: #0056b3; /* Change button background color on hover */
